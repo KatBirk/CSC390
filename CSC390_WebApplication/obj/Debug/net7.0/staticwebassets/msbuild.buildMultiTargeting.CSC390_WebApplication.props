@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CSC390_WebApplication.props" />
+</Project>

@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "Hash": "/8ulezH3NyAKzhCDU22w55O5GU9NKfgfGtRwQNZmKHE=",
+  "Source": "CSC390_WebApplication",
+  "BasePath": "_content/CSC390_WebApplication",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "CSC390_WebApplication\\wwwroot",
+      "Source": "CSC390_WebApplication",
+      "ContentRoot": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\",
+      "BasePath": "_content/CSC390_WebApplication",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\CSS\\mycss.css",
+      "SourceId": "CSC390_WebApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\",
+      "BasePath": "_content/CSC390_WebApplication",
+      "RelativePath": "CSS/mycss.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\CSS\\mycss.css"
+    },
+    {
+      "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\Cool-Restaurant-Logo-Download.webp",
+      "SourceId": "CSC390_WebApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\",
+      "BasePath": "_content/CSC390_WebApplication",
+      "RelativePath": "Images/Cool-Restaurant-Logo-Download.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Cool-Restaurant-Logo-Download.webp"
+    },
+    {
+      "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\restaurantImage.png",
+      "SourceId": "CSC390_WebApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\",
+      "BasePath": "_content/CSC390_WebApplication",
+      "RelativePath": "Images/restaurantImage.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\restaurantImage.png"
+    },
+    {
+      "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\index.html",
+      "SourceId": "CSC390_WebApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\",
+      "BasePath": "_content/CSC390_WebApplication",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}

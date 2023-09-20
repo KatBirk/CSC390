@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\CSS\\mycss.css",
+      "PackagePath": "staticwebassets\\CSS\\mycss.css"
+    },
+    {
+      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\Cool-Restaurant-Logo-Download.webp",
+      "PackagePath": "staticwebassets\\Images\\Cool-Restaurant-Logo-Download.webp"
+    },
+    {
+      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\restaurantImage.png",
+      "PackagePath": "staticwebassets\\Images\\restaurantImage.png"
+    },
+    {
+      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.CSC390_WebApplication.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.CSC390_WebApplication.props",
+      "PackagePath": "build\\CSC390_WebApplication.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.CSC390_WebApplication.props",
+      "PackagePath": "buildMultiTargeting\\CSC390_WebApplication.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.CSC390_WebApplication.props",
+      "PackagePath": "buildTransitive\\CSC390_WebApplication.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

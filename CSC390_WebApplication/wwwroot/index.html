@@ -1,0 +1,45 @@
+<!--Katrine Birk - Homework 03-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Restaurant</title>
+    <link rel="stylesheet" href="/CSS/mycss.css">
+    <script src="myjavascript.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://www.stmartin.edu">
+                <img class="rounded-pill" style="width: 50px;" src="/Images/Cool-Restaurant-Logo-Download.webp"
+                    alt="Restaurant logo">
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown"><a class="nav-link" href="Frontpage.html">Frontpage</a></li>
+                <li class="nav-item"><a class="nav-link" href="Menu.html">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="ContactPage.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h1 class="headings">Welcome to the Restaurant!</h1>
+    <img id="frontpageImage" src="/Images/restaurantImage.png" alt="bad drawing of a Restaurant" title="Bad restaurant image">
+    <p>Welcome to our Restaurant. This restaurant serves every single dish in the world.</p>
+    <p>Our restaurant is located in the middle of nowhere, but we promise it's worth the trip.</p>
+    <p>Our restaurant is open 24/7, so you can come whenever you want.</p>
+    <Button onclick="showMenu()">Check out our menu</Button> <br>
+    <p id="menupar"></p>
+    <label for="checkbox1"> Interested in going?</label>
+    <input onchange="interested()" type="checkbox" id="checkbox1" name="checkbox">
+
+    <h2 class="headings">Check out our other pages</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><a href="ContactPage.html">Contact page</a></li>
+        <li class="list-group-item"><a href="Menu.html">Menu page</a></li>
+    </ul>
+</body>
+
+</html>

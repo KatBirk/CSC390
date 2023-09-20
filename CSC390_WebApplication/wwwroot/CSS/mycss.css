@@ -1,0 +1,13 @@
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.headings{
+    color: cornflowerblue;
+    font-weight: bold;
+    text-align: center;
+}
+#frontpageImage{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}

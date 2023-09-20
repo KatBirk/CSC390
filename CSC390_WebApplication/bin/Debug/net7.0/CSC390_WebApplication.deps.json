@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "CSC390_WebApplication/1.0.0": {
+        "runtime": {
+          "CSC390_WebApplication.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CSC390_WebApplication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
