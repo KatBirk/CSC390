@@ -1,22 +1,28 @@
+using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
 //Register services here
+builder.Services.AddControllersWithViews(); //add services needed for controllers
 
 var app = builder.Build();
 
-//app.MapGet("/", () => "Hello World!");
+//app.MapGet("/", () => );
 
-app.UseDefaultFiles(); //Middleware to use default files - must be called before UseStaticFiles
-app.UseStaticFiles(); //Middleware to enable static files
+//Middleware pipeline
+app.UseStaticFiles(); //Middleware to enable static files, usually first
+app.UseRouting(); //Add route matching to pipeline
+//app.MapDefaultControllerRoute(); //adds simple default routing
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{id}",
+    defaults: new { controller = "Student", action = "Show" });
 
-app.Use(async (context, next) =>
-{
-    await context.Response.WriteAsync("Hello1");
-    next.Invoke();
-    await context.Response.WriteAsync("Hello2");
-});
-app.Run(async context =>
-{
-    await context.Response.WriteAsync("Hello3");
-});
+app.MapControllerRoute( //Specified routing
+    name: "default",
+    pattern: "{Controller=Home}/{Action=Index}/{id?}" //Determines the pattern for the URL path
+);
 
-app.Run();
+
+
+
+app.Run(); //DO NOT delete 

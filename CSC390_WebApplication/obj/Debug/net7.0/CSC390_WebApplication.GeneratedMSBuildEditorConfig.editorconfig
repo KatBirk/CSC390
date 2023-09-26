@@ -15,3 +15,7 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\katri\Documents\Uni_stuff\CSC390_WebApplication\CSC390_WebApplication
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/katri/Documents/Uni_stuff/CSC390_WebApplication/CSC390_WebApplication/Views/Student/Show.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTaG93LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
