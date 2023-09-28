@@ -11,16 +11,15 @@ var app = builder.Build();
 //Middleware pipeline
 app.UseStaticFiles(); //Middleware to enable static files, usually first
 app.UseRouting(); //Add route matching to pipeline
-//app.MapDefaultControllerRoute(); //adds simple default routing
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{id}",
-    defaults: new { controller = "Student", action = "Show" });
+    name: "main",
+    pattern: "{controller}/{action}/{id?}",
+    defaults: new { controller="Home", action="Index" });
 
-app.MapControllerRoute( //Specified routing
-    name: "default",
-    pattern: "{Controller=Home}/{Action=Index}/{id?}" //Determines the pattern for the URL path
-);
+app.MapControllerRoute(
+    name: "dataviewer",
+    pattern: "Show/{action}",
+    defaults: new { controller="Service",action= "PrintTotalServices"});
 
 
 
