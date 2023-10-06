@@ -14,7 +14,7 @@ app.UseRouting(); //Add route matching to pipeline
 app.MapControllerRoute(
     name: "main",
     pattern: "{controller}/{action}/{id?}",
-    defaults: new { controller="Home", action="Index" });
+    defaults: new { controller="Booking", action="Index" });
 
 app.MapControllerRoute(
     name: "dataviewer",
