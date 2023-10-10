@@ -1,60 +1,24 @@
 ﻿using CSC390_WebApplication.Models;
+using CSC390_WebApplication.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CSC390_WebApplication.Controllers
 {
     public class BookingController : Controller
     {
-        //Placeholder until DB is implemented
-        private List<Booking> BookingList = new();
 
-        public BookingController()
+        //Injecting the service (placeholder until data persistence is implemented)
+        private IMyInterface _service;
+
+
+        public BookingController(IMyInterface myInterface)
         {
-            //Adding bookings to list
-            BookingList.Add(new Booking()
-            {
-                Id = 45,
-                Created = DateTime.Parse("12/12/2022"),
-                ServiceId = 1,
-                CustomerName = "Joe",
-                CustomerEmail = "joe@gmail.com"
-            });
-            BookingList.Add(new Booking()
-            {
-                Id = 76,
-                Created = DateTime.Now,
-                ServiceId = 0,
-                CustomerName = "Patty",
-                CustomerEmail = "PatriciaJones@mail.com"
-            }) ;
-            BookingList.Add(new Booking()
-            {
-                Id = 1,
-                Created = DateTime.Parse("08/06/2020"),
-                ServiceId = 3,
-                CustomerName = "John",
-                CustomerEmail = "John@mail.com"
-            });
-            BookingList.Add(new Booking()
-            {
-                Id = 5,
-                Created = DateTime.Parse("07/06/2007"),
-                ServiceId = 3,
-                CustomerName = "Sam",
-                CustomerEmail = "Sam@mail.com"
-            });
-            BookingList.Add(new Booking()
-            {
-                Id = 2,
-                Created = DateTime.Parse("02/06/2023"),
-                ServiceId = 1,
-                CustomerName = "Kayla Rose",
-                CustomerEmail = "krandfam@mail.com"
-            });
+            _service = myInterface;
+            
         }
         public IActionResult Index() //Default page
         { 
-            return View(BookingList); //Pass info to view
+            return View(_service.allBookings); //Pass info to view
         }
         public IActionResult ListAll()
         {
@@ -67,14 +31,75 @@ namespace CSC390_WebApplication.Controllers
             //Show details about each booking
 
             //Search through BookingList using LINQ
-            Booking? b = BookingList.FirstOrDefault(b => b.Id == id);
+            Booking? b = _service.allBookings.FirstOrDefault(b => b.Id == id);
             ViewBag.id = id;
             return View(b);
         }
-        public IActionResult AddBooking()
+        [HttpGet]
+        public IActionResult Add() //will only be called for get requests
         {
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Add(Booking newBooking) //Will only be called for post requests
+        {
+            _service.allBookings.Add(newBooking);
+            //return RedirectToAction("Index",BookingList); //New request, will create new instance of controller
+            return View("Index", _service.allBookings);
+
+        }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            //Search for specific booking
+            Booking? booking = _service.allBookings.FirstOrDefault(Book => Book.Id == id);
+
+            if(booking == null)
+            {
+                return NotFound();
+            } else
+            {
+                return View(booking);
+            }
+        }
+        [HttpPost]
+        public IActionResult Edit(Booking booki)
+        {
+            Booking? booking = _service.allBookings.FirstOrDefault(b => b.Id == booki.Id);
+            if(booking != null)
+            {
+                //Set new values for editable fields
+                booking.CustomerEmail = booki.CustomerEmail;
+                booking.ServiceId = booki.ServiceId;
+                booking.Status = booki.Status;
+            }
+            else
+            {
+                return BadRequest();
+            }
+            //return RedirectToAction("Index",BookingList); //New request, will create new instance of controller
+            return View("Index",_service.allBookings); //Temp fix until data persistence is implemented
+        }
+
+        //Not best implementation
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            //Search for specific booking
+            Booking? booking = _service.allBookings.FirstOrDefault(Book => Book.Id == id);
+
+            if (booking == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                _service.allBookings.Remove(booking);
+                return RedirectToAction("Index");
+            }
+        }
+
     }
 
 }

@@ -1,8 +1,10 @@
+using CSC390_WebApplication.Services;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 //Register services here
 builder.Services.AddControllersWithViews(); //add services needed for controllers
+builder.Services.AddSingleton<IMyInterface,MyServiceClass>(); //Registering a service
 
 var app = builder.Build();
 

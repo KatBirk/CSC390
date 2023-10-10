@@ -32,6 +32,9 @@
                 <th>Booked by</th>
                 <th>Booking date</th>
                 <th>More details</th>
+                <th>Edit</th>
+                <th>Delete</th>
+
             </tr>
         </thead>
         <tbody>
@@ -42,10 +45,14 @@
                     <td>@b.ServiceId</td>
                     <td>@b.CustomerName</td>
                     <td>@b.Created</td>
-                    <td><a asp-action="ShowDetails" asp-route-id="@b.Id">Click for more details</a></td>
+                    <td><a asp-action="ShowDetails" asp-route-id="@b.Id" class="btn btn-success">Show details</a></td>
+                    <td><a asp-action="Edit" asp-route-id="@b.Id" class="btn btn-warning">Edit </a></td>
+                    <td><a asp-action="Delete" asp-route-id="@b.Id" class="btn btn-danger">Delete </a></td>
+
                 </tr>  
             }
         </tbody>
     </table>
+    <a asp-action="Add" asp-controller="Booking" class="btn btn-success">Add a new booking</a>
 </body>
 </html>

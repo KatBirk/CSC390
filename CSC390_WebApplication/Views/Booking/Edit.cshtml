@@ -1,0 +1,29 @@
+﻿@model Booking
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Modifying @Model.CustomerName</h1>
+    <form asp-controller="Booking" asp-action="Edit" method="post">
+        <input asp-for="Id" type="hidden"/><br />
+        @* <label asp-for="@Model.CustomerName"> </label> <input asp-for="CustomerName" /><br /> *@
+        <label asp-for="@Model.CustomerEmail"> </label> <input asp-for="CustomerEmail" /><br />
+        @* <label asp-for="@Model.Created"></label> <input asp-for="Created" /><br /> *@
+        <label asp-for="@Model.ServiceId"></label> <input asp-for="ServiceId" /><br />
+        <label asp-for="@Model.Status"></label> <select asp-for="Status" asp-items="@Html.GetEnumSelectList(typeof(Status))"></select> <br /> <!--Showing as dropdown-->
+        <br />
+        <br />
+        <input type="submit" value="Save booking changes" />
+        <input type="button" value="Cancel" onclick="history.back()"/>
+
+    </form>
+</body>
+</html>
