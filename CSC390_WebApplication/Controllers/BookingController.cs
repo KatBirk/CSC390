@@ -45,8 +45,8 @@ namespace CSC390_WebApplication.Controllers
         public IActionResult Add(Booking newBooking) //Will only be called for post requests
         {
             _service.allBookings.Add(newBooking);
-            //return RedirectToAction("Index",BookingList); //New request, will create new instance of controller
-            return View("Index", _service.allBookings);
+            return RedirectToAction("Index", _service.allBookings); //New request, will create new instance of controller
+            //return View("Index", _service.allBookings);
 
         }
         [HttpGet]
@@ -78,8 +78,8 @@ namespace CSC390_WebApplication.Controllers
             {
                 return BadRequest();
             }
-            //return RedirectToAction("Index",BookingList); //New request, will create new instance of controller
-            return View("Index",_service.allBookings); //Temp fix until data persistence is implemented
+            return RedirectToAction("Index", _service.allBookings); //New request, will create new instance of controller
+            //return View("Index",_service.allBookings); //Temp fix until data persistence is implemented
         }
 
         //Not best implementation
