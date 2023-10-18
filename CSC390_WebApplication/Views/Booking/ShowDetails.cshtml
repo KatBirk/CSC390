@@ -17,14 +17,22 @@
 <body>
     <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
         <div class="container-fluid">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown"><a class="nav-link" asp-controller="Home" asp-action="HomePage">Home</a></li>
-                <li class="nav-item"><a class="nav-link" asp-controller="Booking" asp-action="Index">Index</a></li>
-                <li class="nav-item"><a class="nav-link" asp-controller="Service" asp-action="ShowService">Services</a></li>
-            </ul>
+            <a class="navbar-brand" href="#">
+                <img src="~/Images/Cool-Restaurant-Logo-Download.webp" alt="logo" style="width:40px;" class="rounded-pill" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="HomePage">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Booking" asp-action="Index">Index</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Service" asp-action="ShowService">Services</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
-    <a asp-action="Index">Back to list</a>
+    
     @if(Model is null)
     {
        <h1>There is no booking with the ID @ViewBag.id</h1> 
@@ -33,6 +41,7 @@
     <h2><label asp-for="@Model.CustomerName"> </label>@Model.CustomerName</h2>
     <p><label asp-for="@Model.CustomerEmail"> </label>@Model.CustomerEmail <br /><label asp-for="@Model.Created"> </label> @Model.Created</p>
     }
+    <a class="btn btn-info" asp-action="Index">Back to list</a>
     
 </body>
 </html>

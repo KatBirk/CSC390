@@ -14,14 +14,57 @@
     <title>Add</title>
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="~/Images/Cool-Restaurant-Logo-Download.webp" alt="logo" style="width:40px;" class="rounded-pill" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="HomePage">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Booking" asp-action="Index">Index</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Service" asp-action="ShowService">Services</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <h1>Create a new booking record</h1>
+    <div asp-validation-summary="All" style="color:red;"></div>
     <form asp-controller="Booking" asp-action="Add">
-        <label asp-for="@Model.Id"></label> <input asp-for="Id" /><br />
-        <label asp-for="@Model.CustomerName"> </label> <input asp-for="CustomerName" /><br />
-        <label asp-for="@Model.CustomerEmail"> </label> <input asp-for="CustomerEmail" /><br />
-        <label asp-for="@Model.Created"></label> <input asp-for="Created" /><br />
-        <label asp-for="@Model.ServiceId"></label> <input asp-for="ServiceId" /><br />
-        <label asp-for="@Model.Status"></label> <select asp-for="Status" asp-items="@Html.GetEnumSelectList(typeof(Status))"></select> <br /> <!--Showing as dropdown-->
+        <label asp-for="@Model.Id"></label>
+        <input asp-for="Id" />
+        <span asp-validation-for="Id"></span>
+        <br />
+        <label asp-for="@Model.CustomerName"> </label> 
+        <input asp-for="CustomerName" />
+        <span asp-validation-for="CustomerName"></span>
+        <br />
+        <label asp-for="@Model.CustomerEmail"> </label> 
+        <input asp-for="CustomerEmail" />
+        <span asp-validation-for="CustomerEmail"></span>
+        <br />
+        <label asp-for="@Model.PhoneNumber"> </label> 
+        <input asp-for="PhoneNumber" />
+        <span asp-validation-for="PhoneNumber"></span>
+        <br />
+        <label asp-for="@Model.Created"></label> 
+        <input asp-for="Created" />
+        <span asp-validation-for="Created"></span>
+        <br />
+        <label asp-for="@Model.ServiceId"></label> 
+        <input asp-for="ServiceId" />
+        <span asp-validation-for="Id"></span>
+        <br />
+        <label asp-for="@Model.Status"></label> 
+        <select asp-for="Status" asp-items="@Html.GetEnumSelectList(typeof(Status))">
+            <!--Showing as dropdown-->
+            <option>Select</option>
+        </select>
+        <span asp-validation-for="Id"></span> 
+        <br /> 
         <br />
         <br />
         <input type="submit" value="Save new booking"/>

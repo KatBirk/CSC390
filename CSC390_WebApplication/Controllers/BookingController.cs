@@ -44,9 +44,13 @@ namespace CSC390_WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Add(Booking newBooking) //Will only be called for post requests
         {
+            if (!ModelState.IsValid) //Enforcing validation
+            {
+                return View();
+            }
             _service.allBookings.Add(newBooking);
             return RedirectToAction("Index", _service.allBookings); //New request, will create new instance of controller
-            //return View("Index", _service.allBookings);
+            
 
         }
         [HttpGet]
@@ -67,7 +71,11 @@ namespace CSC390_WebApplication.Controllers
         public IActionResult Edit(Booking booki)
         {
             Booking? booking = _service.allBookings.FirstOrDefault(b => b.Id == booki.Id);
-            if(booking != null)
+            if (!ModelState.IsValid) //Enforcing validation
+            {
+                return View(booking);
+            }
+            if (booking != null)
             {
                 //Set new values for editable fields
                 booking.CustomerEmail = booki.CustomerEmail;
@@ -95,9 +103,26 @@ namespace CSC390_WebApplication.Controllers
             }
             else
             {
+                return View(booking);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult DeleteConfirm(int id)
+        {
+            //Search for specific booking
+            Booking? booking = _service.allBookings.FirstOrDefault(Book => Book.Id == id);
+
+            if (booking == null)
+            {
+                return NotFound();
+            }
+            else
+            {
                 _service.allBookings.Remove(booking);
                 return RedirectToAction("Index");
             }
+            
         }
 
     }
