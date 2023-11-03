@@ -1,4 +1,5 @@
-﻿using CSC390_WebApplication.Models;
+﻿using CSC390_WebApplication.Data;
+using CSC390_WebApplication.Models;
 using CSC390_WebApplication.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,17 +9,18 @@ namespace CSC390_WebApplication.Controllers
     {
 
         //Injecting the service (placeholder until data persistence is implemented)
-        private IMyInterface _service;
+        //private IMyInterface _service; //old data before db
+        private MyDbContext _dbContext;
 
 
-        public BookingController(IMyInterface myInterface)
+        public BookingController( MyDbContext dbContext)
         {
-            _service = myInterface;
+            _dbContext = dbContext;
             
         }
         public IActionResult Index() //Default page
         { 
-            return View(_service.allBookings); //Pass info to view
+            return View(_dbContext.Bookings.ToList()); //Pass info to view
         }
         public IActionResult ListAll()
         {
@@ -31,7 +33,7 @@ namespace CSC390_WebApplication.Controllers
             //Show details about each booking
 
             //Search through BookingList using LINQ
-            Booking? b = _service.allBookings.FirstOrDefault(b => b.Id == id);
+            Booking? b = _dbContext.Bookings.FirstOrDefault(b => b.Id == id);
             ViewBag.id = id;
             return View(b);
         }
@@ -48,8 +50,9 @@ namespace CSC390_WebApplication.Controllers
             {
                 return View();
             }
-            _service.allBookings.Add(newBooking);
-            return RedirectToAction("Index", _service.allBookings); //New request, will create new instance of controller
+            _dbContext.Bookings.Add(newBooking);
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index", _dbContext.Bookings.ToList()); //New request, will create new instance of controller
             
 
         }
@@ -57,7 +60,7 @@ namespace CSC390_WebApplication.Controllers
         public IActionResult Edit(int id)
         {
             //Search for specific booking
-            Booking? booking = _service.allBookings.FirstOrDefault(Book => Book.Id == id);
+            Booking? booking = _dbContext.Bookings.FirstOrDefault(Book => Book.Id == id);
 
             if(booking == null)
             {
@@ -70,7 +73,7 @@ namespace CSC390_WebApplication.Controllers
         [HttpPost]
         public IActionResult Edit(Booking booki)
         {
-            Booking? booking = _service.allBookings.FirstOrDefault(b => b.Id == booki.Id);
+            Booking? booking = _dbContext.Bookings.FirstOrDefault(b => b.Id == booki.Id);
             if (!ModelState.IsValid) //Enforcing validation
             {
                 return View(booking);
@@ -81,12 +84,14 @@ namespace CSC390_WebApplication.Controllers
                 booking.CustomerEmail = booki.CustomerEmail;
                 booking.ServiceId = booki.ServiceId;
                 booking.Status = booki.Status;
+                _dbContext.SaveChanges();
+
             }
             else
             {
                 return BadRequest();
             }
-            return RedirectToAction("Index", _service.allBookings); //New request, will create new instance of controller
+            return RedirectToAction("Index", _dbContext.Bookings.ToList()); //New request, will create new instance of controller
             //return View("Index",_service.allBookings); //Temp fix until data persistence is implemented
         }
 
@@ -95,7 +100,7 @@ namespace CSC390_WebApplication.Controllers
         public IActionResult Delete(int id)
         {
             //Search for specific booking
-            Booking? booking = _service.allBookings.FirstOrDefault(Book => Book.Id == id);
+            Booking? booking = _dbContext.Bookings.FirstOrDefault(Book => Book.Id == id);
 
             if (booking == null)
             {
@@ -111,7 +116,7 @@ namespace CSC390_WebApplication.Controllers
         public IActionResult DeleteConfirm(int id)
         {
             //Search for specific booking
-            Booking? booking = _service.allBookings.FirstOrDefault(Book => Book.Id == id);
+            Booking? booking = _dbContext.Bookings.FirstOrDefault(Book => Book.Id == id);
 
             if (booking == null)
             {
@@ -119,7 +124,8 @@ namespace CSC390_WebApplication.Controllers
             }
             else
             {
-                _service.allBookings.Remove(booking);
+                _dbContext.Bookings.Remove(booking);
+                _dbContext.SaveChanges();
                 return RedirectToAction("Index");
             }
             

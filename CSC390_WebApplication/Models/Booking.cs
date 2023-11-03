@@ -11,8 +11,8 @@ namespace CSC390_WebApplication.Models
     }
     public class Booking
     {
-        [Required(ErrorMessage =" Please enter an id")]
-        [Display (Name="ID ")]
+        //[Required(ErrorMessage =" Please enter an id")]
+        //[Display (Name="ID ")]
         public int? Id { get; set; }
 
         [Required(ErrorMessage = "You must specify a creation date")]

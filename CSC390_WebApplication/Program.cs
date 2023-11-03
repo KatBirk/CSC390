@@ -1,12 +1,19 @@
+using CSC390_WebApplication.Data;
 using CSC390_WebApplication.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 //Register services here
 builder.Services.AddControllersWithViews(); //add services needed for controllers
 builder.Services.AddSingleton<IMyInterface,MyServiceClass>(); //Registering a service
+builder.Services.AddDbContext<MyDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("myDB")));
 
 var app = builder.Build();
+
+var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<MyDbContext>();
+//context.Database.EnsureDeleted(); //Should be commented out when dev is done
+context.Database.EnsureCreated();
 
 //app.MapGet("/", () => );
 

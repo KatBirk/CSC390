@@ -1,0 +1,20 @@
+﻿@model Service
+@{
+    ViewData["Title"] = "ShowDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+@if (Model is null)
+{
+	<h1>There is no service with the ID @ViewBag.id</h1>
+}
+else
+{
+	<h1><label asp-for="@Model.Id"></label>: @Model.Id</h1>
+	<h2><label asp-for="@Model.ServiceName"> </label> @Model.ServiceName</h2>
+	<p><label asp-for="@Model.ServiceType"></label> @Model.ServiceType</p>
+	<p><label asp-for="@Model.ServiceDescription"> </label> @Model.ServiceDescription <br /><label asp-for="@Model.Price"> </label> @Model.Price</p>
+}
+<a class="btn btn-info" asp-controller="Service" asp-action="Index">Back to list</a>
+

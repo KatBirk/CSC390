@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Service>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Displaying all services</h1>
+
+<table class="table table-bordered">
+	<thead class="table-dark">
+		<tr>
+			<th>Service name</th>
+			<th>Service description</th>
+			<th>Service type</th>
+			<th>Price</th>
+			<th>More details</th>
+			<th>Edit</th>
+			<th>Delete</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (Service s in Model) //Using model adding in the top of the file
+		{
+			<tr>
+				<td>@s.ServiceName</td>
+				<td>@s.ServiceDescription</td>
+				<td>@s.ServiceType</td>
+				<td>@s.Price</td>
+				<td><a asp-action="ShowDetails" asp-controller="Service" asp-route-id="@s.Id" class="btn btn-success">Show details</a></td>
+				<td><a asp-action="Edit" asp-controller="Service" asp-route-id="@s.Id" class="btn btn-warning">Edit </a></td>
+				<td><a asp-action="Delete" asp-controller="Service" asp-route-id="@s.Id" class="btn btn-danger">Delete </a></td>
+			</tr>
+		}
+	</tbody>
+</table>
+<a asp-action="Add" asp-controller="Service" class="btn btn-success">Add a new service</a>
+
+

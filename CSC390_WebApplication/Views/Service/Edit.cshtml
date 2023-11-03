@@ -1,0 +1,23 @@
+﻿@model Service
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Modifying @Model.ServiceName</h1>
+<form asp-controller="Service" asp-action="Edit" method="post">
+	<input asp-for="Id" type="hidden" />
+	<input asp-for="ServiceName" type="hidden" />
+	<label asp-for="@Model.ServiceDescription"> </label> <input asp-for="ServiceDescription" /><br />
+	<span asp-validation-for="ServiceDescription"></span>
+	<label asp-for="@Model.ServiceType"></label> <select asp-for="ServiceType" asp-items="@Html.GetEnumSelectList(typeof(ServiceType))"></select> <br /> <!--Showing as dropdown-->
+	<span asp-validation-for="ServiceType"></span>
+	<label asp-for="@Model.Price"> </label> <input asp-for="Price" /><br />
+	<span asp-validation-for="Price"></span>
+	<br />
+	<br />
+	<input type="submit" value="Save service changes" />
+	<input type="button" value="Cancel" onclick="history.back()" />
+
+	<div asp-validation-summary="All" style="color:red;"></div>
+</form>

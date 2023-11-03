@@ -1,0 +1,41 @@
+﻿@model Service
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Add a service</h1>
+<div asp-validation-summary="All" style="color:red;"></div>
+<form asp-controller="Service" asp-action="Add">
+	@*
+	<label asp-for="@Model.Id"></label>
+	<input asp-for="Id" />
+	<span asp-validation-for="Id"></span>
+	<br />
+	*@
+	<label asp-for="@Model.ServiceName"> </label>
+	<input asp-for="ServiceName" />
+	<span asp-validation-for="ServiceName"></span>
+	<br />
+	<label asp-for="@Model.ServiceDescription"> </label>
+	<input asp-for="ServiceDescription" />
+	<span asp-validation-for="ServiceDescription"></span>
+	<br />
+	<label asp-for="@Model.ServiceType"></label>
+	<select asp-for="ServiceType" asp-items="@Html.GetEnumSelectList(typeof(ServiceType))">
+		<!--Showing as dropdown-->
+		<option>Select</option>
+	</select>
+	<br/>
+	<span asp-validation-for="Id"></span>
+	<label asp-for="@Model.Price"> </label>
+	<input asp-for="Price" />
+	<span asp-validation-for="Price"></span>
+	<br />
+	<br />
+	<br />
+	<br />
+	<input type="submit" value="Save new service" />
+	<input type="button" value="Cancel" onclick="history.back()" />
+</form>
+
