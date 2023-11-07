@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="HomePage">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Booking" asp-action="Index">Index</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Booking" asp-action="Index">Bookings</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Service" asp-action="Index">Services</a></li>
 
                 </ul>
@@ -31,5 +31,8 @@
     <div>
         @RenderBody()
     </div>
+    @RenderSection("footer",false) <!--Section can be given any name. Bool indicates required
+        Section defines where on the page it is defined
+    -->
 </body>
 </html>

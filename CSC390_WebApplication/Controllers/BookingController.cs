@@ -18,9 +18,17 @@ namespace CSC390_WebApplication.Controllers
             _dbContext = dbContext;
             
         }
-        public IActionResult Index() //Default page
-        { 
-            return View(_dbContext.Bookings.ToList()); //Pass info to view
+        public IActionResult Index(string searchByCustomerName) //Default page
+            //Automatically populated param with the input from search box due to same name
+        {
+            var bookings = _dbContext.Bookings.AsEnumerable(); 
+            if(! string.IsNullOrEmpty(searchByCustomerName))
+            {
+                bookings = bookings.Where(book => book.CustomerName.ToLower().Contains(searchByCustomerName.ToLower()));
+            }
+            ViewBag.searchByCustomerName=searchByCustomerName;
+            
+            return View(bookings.ToList()); //Pass info to view
         }
         public IActionResult ListAll()
         {
