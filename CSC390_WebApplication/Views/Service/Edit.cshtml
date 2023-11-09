@@ -13,6 +13,9 @@
 	<span asp-validation-for="ServiceType"></span>
 	<label asp-for="@Model.Price"> </label> <input asp-for="Price" /><br />
 	<span asp-validation-for="Price"></span>
+	<label asp-for="@Model.IsActive"> </label> <input asp-for="IsActive" /><br />
+	<span asp-validation-for="IsActive"></span>
+	<input asp-for="CreatedDate" type="hidden" />
 	<br />
 	<br />
 	<input type="submit" value="Save service changes" />

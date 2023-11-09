@@ -25,11 +25,19 @@
 		<!--Showing as dropdown-->
 		<option>Select</option>
 	</select>
+	<span asp-validation-for="ServiceType"></span>
 	<br/>
-	<span asp-validation-for="Id"></span>
 	<label asp-for="@Model.Price"> </label>
 	<input asp-for="Price" />
 	<span asp-validation-for="Price"></span>
+	<br />
+	<label asp-for="@Model.IsActive"> </label>
+	<input asp-for="IsActive" />
+	<span asp-validation-for="IsActive"></span>
+	<br />
+	<label asp-for="@Model.CreatedDate"></label>
+	<input asp-for="CreatedDate" />
+	<span asp-validation-for="CreatedDate"></span>
 	<br />
 	<br />
 	<br />

@@ -67,7 +67,9 @@ namespace CSC390_WebApplication.Data
                     Price = 100,
                     ServiceName = "Oil change",
                     ServiceType = ServiceType.CAR,
-                    ServiceDescription = "Get your oil changed"
+                    ServiceDescription = "Get your oil changed",
+                    CreatedDate = DateTime.Parse("02/02/2010"),
+                    IsActive = true
                 },
                 new Service()
                 {
@@ -75,18 +77,21 @@ namespace CSC390_WebApplication.Data
                     Price = 50,
                     ServiceName = "General car check",
                     ServiceType = ServiceType.CAR,
-                    ServiceDescription = "Checkup for your car"
-                },
+                    ServiceDescription = "Checkup for your car",
+                    CreatedDate = DateTime.Now,
+					IsActive = true
+				},
                 new Service()
                 {
                     Id = 3,
                     Price = 70,
                     ServiceName = "Regular haircut",
                     ServiceType = ServiceType.BEAUTY,
-                    ServiceDescription = "Get a regular haircut with no coloring"
-                    
-                }
-                );
+                    ServiceDescription = "Get a regular haircut with no coloring",
+                    CreatedDate = DateTime.Parse("12/03/2003"),
+					IsActive = false
+				}
+				) ;
         }
     }
 }

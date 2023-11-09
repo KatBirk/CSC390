@@ -1,13 +1,41 @@
-p {
+p /*Element selector*/{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: dimgray;
 }
-.headings{
-    color: cornflowerblue;
-    font-weight: bold;
+
+body { /*Element selector*/
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.altText { /*Class selector*/
+    color: whitesmoke;
+}
+
+#foot { /*id selector*/
+    background-color: darkblue;
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
     text-align: center;
+    bottom: 0;
+    left: 0;
+    position: fixed;
 }
-#frontpageImage{
+
+img {
     display: block;
     margin-right: auto;
     margin-left: auto;
 }
+
+.clearfix::after {/*Class selector*/
+    content: "";
+    clear: both;
+    display: table;
+    margin-bottom: 60px;
+}
+
+
+

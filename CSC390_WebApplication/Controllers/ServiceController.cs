@@ -79,6 +79,7 @@ namespace CSC390_WebApplication.Controllers
 				service.ServiceName = serv.ServiceName;
 				service.ServiceDescription = serv.ServiceDescription;
 				service.Price = serv.Price;
+				service.IsActive = serv.IsActive;
 				_dbContext.SaveChanges();
 			}
 			else

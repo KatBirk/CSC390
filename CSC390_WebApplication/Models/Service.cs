@@ -31,5 +31,14 @@ namespace CSC390_WebApplication.Models
 		[DataType(DataType.Currency)]
 		[Required(ErrorMessage ="Please enter a price for the service")]
 		public double? Price { get; set; }
+
+		[Display(Name = "Is active? ")]
+		public bool IsActive { get; set; }
+
+		[Display(Name = "Date created ")]
+		[Required(ErrorMessage = "You must specify a creation date")]
+		[CheckDateAfter2000(ErrorMessage = "A valid date is between year 2000 and today")]
+		[DataType(DataType.Date)] //Data type validation
+		public DateTime? CreatedDate { get; set; }
     }
 }

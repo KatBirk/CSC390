@@ -13,6 +13,7 @@
 			<th>Service description</th>
 			<th>Service type</th>
 			<th>Price</th>
+			<th>Is active</th>
 			<th>More details</th>
 			<th>Edit</th>
 			<th>Delete</th>
@@ -27,6 +28,7 @@
 				<td>@s.ServiceDescription</td>
 				<td>@s.ServiceType</td>
 				<td>@s.Price</td>
+				<td>@s.IsActive</td>
 				<td><a asp-action="ShowDetails" asp-controller="Service" asp-route-id="@s.Id" class="btn btn-success">Show details</a></td>
 				<td><a asp-action="Edit" asp-controller="Service" asp-route-id="@s.Id" class="btn btn-warning">Edit </a></td>
 				<td><a asp-action="Delete" asp-controller="Service" asp-route-id="@s.Id" class="btn btn-danger">Delete </a></td>
