@@ -40,5 +40,8 @@ namespace CSC390_WebApplication.Models
 		[CheckDateAfter2000(ErrorMessage = "A valid date is between year 2000 and today")]
 		[DataType(DataType.Date)] //Data type validation
 		public DateTime? CreatedDate { get; set; }
+
+		[Display(Name ="Service Cover")]
+		public byte[]? ServiceCoverImage { get; set; }
     }
 }

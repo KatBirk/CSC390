@@ -18,19 +18,29 @@ context.Database.EnsureCreated();
 //app.MapGet("/", () => );
 
 //Middleware pipeline
+if (app.Environment.IsDevelopment()) //Error page def depending on app status
+{
+    //Get detailed error page
+    app.UseDeveloperExceptionPage();
+}
+else
+{
+    //Get user friendly error page
+    app.UseExceptionHandler("/Home/Error");
+    app.UseStatusCodePagesWithRedirects("/Home/Error");
+}
+
 app.UseStaticFiles(); //Middleware to enable static files, usually first
 app.UseRouting(); //Add route matching to pipeline
 app.MapControllerRoute(
     name: "main",
     pattern: "{controller}/{action}/{id?}",
-    defaults: new { controller="Booking", action="Index" });
+    defaults: new { controller="Home", action="HomePage" });
 
 app.MapControllerRoute(
     name: "dataviewer",
     pattern: "Show/{action}",
-    defaults: new { controller="Service",action= "PrintTotalServices"});
-
-
+    defaults: new { controller="Service",action= "Index"});
 
 
 app.Run(); //DO NOT delete 

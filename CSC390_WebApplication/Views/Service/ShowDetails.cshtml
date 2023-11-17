@@ -15,6 +15,15 @@ else
 	<p><label asp-for="@Model.ServiceType"></label> @Model.ServiceType</p>
 	<p><label asp-for="@Model.ServiceDescription"> </label> @Model.ServiceDescription <br /><label asp-for="@Model.Price"> </label> @Model.Price</p>
 	<p><label asp-for="@Model.IsActive"></label> @Model.IsActive <br /><label asp-for="@Model.CreatedDate"> </label> @Model.CreatedDate</p>
+
+	if (ViewBag.serviceCoverImage != null)//Check if image exists
+	{
+		<img src="@ViewBag.serviceCoverImage" height="400"/>
+	} 
+	else
+	{
+		<img src="~/images/servicedefaulticon.png" />
+	}
 }
 <a class="btn btn-info" asp-controller="Service" asp-action="Index">Back to list</a>
 

@@ -5,7 +5,7 @@
 
 <h1>Create a new booking record</h1>
 <div asp-validation-summary="All" style="color:red;"></div>
-<form asp-controller="Booking" asp-action="Add">
+<form asp-controller="Booking" asp-action="Add" enctype="multipart/form-data" method="post">
 	@*
 	<label asp-for="@Model.Id"></label>
 	<input asp-for="Id" />
@@ -37,8 +37,9 @@
 		<!--Showing as dropdown-->
 		<option>Select</option>
 	</select>
-	<span asp-validation-for="Id"></span>
+	<span asp-validation-for="Status"></span>
 	<br />
+	<input type="file" name="CustomerImage" />
 	<br />
 	<br />
 	<input type="submit" value="Save new booking" />

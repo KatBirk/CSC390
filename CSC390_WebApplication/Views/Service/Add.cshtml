@@ -5,7 +5,7 @@
 
 <h1>Add a service</h1>
 <div asp-validation-summary="All" style="color:red;"></div>
-<form asp-controller="Service" asp-action="Add">
+<form asp-controller="Service" asp-action="Add" enctype="multipart/form-data" method="post">
 	@*
 	<label asp-for="@Model.Id"></label>
 	<input asp-for="Id" />
@@ -39,6 +39,7 @@
 	<input asp-for="CreatedDate" />
 	<span asp-validation-for="CreatedDate"></span>
 	<br />
+	<input type="file" name="ServiceCoverImage"/>
 	<br />
 	<br />
 	<br />

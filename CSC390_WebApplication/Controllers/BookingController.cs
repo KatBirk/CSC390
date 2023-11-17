@@ -22,13 +22,28 @@ namespace CSC390_WebApplication.Controllers
             //Automatically populated param with the input from search box due to same name
         {
             var bookings = _dbContext.Bookings.AsEnumerable(); 
+
             if(! string.IsNullOrEmpty(searchByCustomerName))
             {
                 bookings = bookings.Where(book => book.CustomerName.ToLower().Contains(searchByCustomerName.ToLower()));
             }
             ViewBag.searchByCustomerName=searchByCustomerName;
-            
-            return View(bookings.ToList()); //Pass info to view
+
+			Dictionary<int, string> photos = new(); //stores cover photos 
+													//Create image from byte[] in db
+			foreach (var b in bookings)
+			{
+				if (b.CustomerImage != null) //If image exists in db
+				{
+					//Covert byte[] back into image
+					string imageBase64Data = Convert.ToBase64String(b.CustomerImage);
+					string customerImage = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+					photos[b.Id] = customerImage;
+				}
+			}
+			ViewBag.photos = photos; //Pass dictionary to viewbag
+
+			return View(bookings.ToList()); //Pass info to view
         }
         public IActionResult ListAll()
         {
@@ -42,7 +57,18 @@ namespace CSC390_WebApplication.Controllers
 
             //Search through BookingList using LINQ
             Booking? b = _dbContext.Bookings.FirstOrDefault(b => b.Id == id);
-            ViewBag.id = id;
+
+			if (b != null)
+			{
+				if (b.CustomerImage != null) //If image exists in db
+				{
+					//Covert byte[] back into image
+					string imageBase64Data = Convert.ToBase64String(b.CustomerImage);
+					string customerImage = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+					ViewBag.customerImage = customerImage;
+				}
+			}
+			ViewBag.id = id;
             return View(b);
         }
         [HttpGet]
@@ -58,7 +84,16 @@ namespace CSC390_WebApplication.Controllers
             {
                 return View();
             }
-            _dbContext.Bookings.Add(newBooking);
+			foreach (var file in Request.Form.Files) //Convert file to memorystream
+			{
+				MemoryStream ms = new();
+				file.CopyTo(ms);
+				newBooking.CustomerImage = ms.ToArray();
+
+				ms.Close();
+				ms.Dispose();
+			}
+			_dbContext.Bookings.Add(newBooking);
             _dbContext.SaveChanges();
             return RedirectToAction("Index", _dbContext.Bookings.ToList()); //New request, will create new instance of controller
             

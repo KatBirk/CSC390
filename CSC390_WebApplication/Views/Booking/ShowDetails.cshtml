@@ -13,6 +13,15 @@ else
 	<h1><label asp-for="@Model.Id"></label>@Model.Id</h1>
 	<h2><label asp-for="@Model.CustomerName"> </label>@Model.CustomerName</h2>
 	<p><label asp-for="@Model.CustomerEmail"> </label>@Model.CustomerEmail <br /><label asp-for="@Model.Created"> </label> @Model.Created</p>
+
+	if (ViewBag.customerImage != null)//Check if image exists
+	{
+		<img src="@ViewBag.customerImage" height="400" />
+	}
+	else
+	{
+		<img src="~/Images/standardCustomer.webp" />
+	}
 }
 <a class="btn btn-info" asp-action="Index">Back to list</a>
 

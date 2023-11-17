@@ -13,7 +13,7 @@ namespace CSC390_WebApplication.Models
     {
         //[Required(ErrorMessage =" Please enter an id")]
         //[Display (Name="ID ")]
-        public int? Id { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "You must specify a creation date")]
         [Display(Name = "Date created ")]
@@ -42,5 +42,8 @@ namespace CSC390_WebApplication.Models
         [Display(Name ="Status ")]
         public Status Status { get; set; }
 
-    }
+		[Display(Name = "Customer photo")]
+		public byte[]? CustomerImage { get; set; }
+
+	}
 }

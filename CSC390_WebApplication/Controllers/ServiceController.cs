@@ -16,16 +16,43 @@ namespace CSC390_WebApplication.Controllers
         //Display all services
         public IActionResult Index()
         {
-            return View(_dbContext.Services.ToList());
+			var services = _dbContext.Services.AsEnumerable();
+
+			Dictionary<int, string> photos = new(); //stores cover photos  
+			
+			//Create image from byte[] in db
+			foreach(var s in services)
+			{
+				if (s.ServiceCoverImage != null) //If image exists in db
+				{
+					//Covert byte[] back into image
+					string imageBase64Data = Convert.ToBase64String(s.ServiceCoverImage);
+					string serviceCoverImage = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+					photos[s.Id] = serviceCoverImage;
+				}
+			}
+			ViewBag.photos = photos; //Pass dictionary to viewbag
+            return View(services);
         }
 
 		//Display one service
 		public IActionResult ShowDetails(int id)
 		{
 			//Show details about each booking
+			
 
 			//Search through BookingList using LINQ
 			Service? s = _dbContext.Services.FirstOrDefault(s => s.Id == id);
+			if(s != null)
+			{
+				if (s.ServiceCoverImage != null) //If image exists in db
+				{
+					//Covert byte[] back into image
+					string imageBase64Data = Convert.ToBase64String(s.ServiceCoverImage);
+					string serviceCoverImage = string.Format("data:image/jpg;base64,{0}", imageBase64Data);
+					ViewBag.serviceCoverImage = serviceCoverImage;
+				}
+			}
 			ViewBag.id = id;
 			return View(s);
 		}
@@ -43,6 +70,16 @@ namespace CSC390_WebApplication.Controllers
 			if (!ModelState.IsValid) //Enforcing validation
 			{
 				return View();
+			}
+
+			foreach (var file in Request.Form.Files) //Convert file to memorystream
+			{
+				MemoryStream ms = new();
+				file.CopyTo(ms);
+				newService.ServiceCoverImage = ms.ToArray();
+
+				ms.Close();
+				ms.Dispose();
 			}
 			_dbContext.Services.Add(newService);
 			_dbContext.SaveChanges();
@@ -124,46 +161,8 @@ namespace CSC390_WebApplication.Controllers
 			}
 		}
 
+
+
 	}
 }
 
-/*
- [Route("findservice")]
-        [Route("services/{id?}")]
-        public ViewResult ShowService(int id)
-        {
-            Service service = new Service();
-            if (id == 0)
-            {
-                service.ServiceName = "Haircut";
-                service.ServiceDescription = "Get a standard haircut";
-                service.ServiceType = ServiceType.BEAUTY;
-                service.Price = 50;
-            }
-            else
-            {
-                service.ServiceName = "Phone repair";
-                service.ServiceDescription = "Get your broken phone fixed";
-                service.ServiceType = ServiceType.TECH;
-                service.Price = 60;
-
-            }
-            ViewBag.service = service;
-            return View();
-        }
-
-       
-        public ContentResult PrintTotalServices()
-        {
-            return Content($"ServiceController - PrintAllServices: \nAll services include: {ServiceType.BEAUTY}," +
-                $"{ServiceType.TECH}, {ServiceType.CAR} and misc. services");
-        }
-
-        public ContentResult SimplePrint()
-        {
-            Service s = new Service();
-            s.ServiceName = "TestService";
-            s.Price = 50;
-
-            return Content($"ServiceController - Simple print: \nOne service is: {s.ServiceName}. It has a price of {50:c}");
-        }*/

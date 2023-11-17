@@ -14,5 +14,10 @@ namespace CSC390_WebApplication.Controllers
             return View();
         }
 
+        public IActionResult Error() 
+        {
+            return View();
+        }
+
     }
 }
