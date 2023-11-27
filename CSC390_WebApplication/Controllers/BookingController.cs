@@ -1,10 +1,12 @@
 ﻿using CSC390_WebApplication.Data;
 using CSC390_WebApplication.Models;
 using CSC390_WebApplication.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CSC390_WebApplication.Controllers
 {
+    [Authorize]
     public class BookingController : Controller
     {
 
@@ -18,6 +20,8 @@ namespace CSC390_WebApplication.Controllers
             _dbContext = dbContext;
             
         }
+
+        [AllowAnonymous]
         public IActionResult Index(string searchByCustomerName) //Default page
             //Automatically populated param with the input from search box due to same name
         {
@@ -51,6 +55,7 @@ namespace CSC390_WebApplication.Controllers
             return RedirectToAction("Index"); //Reroute to index
         }
 
+        [AllowAnonymous]
         public IActionResult ShowDetails(int id)
         {
             //Show details about each booking

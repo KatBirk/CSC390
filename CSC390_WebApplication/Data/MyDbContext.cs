@@ -1,9 +1,10 @@
 ﻿using CSC390_WebApplication.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CSC390_WebApplication.Data
 {
-    public class MyDbContext : DbContext
+    public class MyDbContext : IdentityDbContext<User>
     {
         //Saving bookings and services 
         public DbSet<Booking> Bookings { get; set; } //Name will be tablename

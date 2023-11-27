@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CSC390_WebApplication.Models;
 using CSC390_WebApplication.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CSC390_WebApplication.Controllers
 {
+    [Authorize]
     public class ServiceController : Controller
     {
         private MyDbContext _dbContext;
@@ -13,7 +15,8 @@ namespace CSC390_WebApplication.Controllers
             _dbContext = dbContext;
         }
 
-        //Display all services
+		//Display all services
+		[AllowAnonymous]
         public IActionResult Index()
         {
 			var services = _dbContext.Services.AsEnumerable();
@@ -35,8 +38,9 @@ namespace CSC390_WebApplication.Controllers
             return View(services);
         }
 
-		//Display one service
-		public IActionResult ShowDetails(int id)
+        //Display one service
+        [AllowAnonymous]
+        public IActionResult ShowDetails(int id)
 		{
 			//Show details about each booking
 			

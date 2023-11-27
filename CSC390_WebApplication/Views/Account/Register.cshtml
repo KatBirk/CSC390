@@ -1,0 +1,19 @@
+﻿@model CSC390_WebApplication.ViewModels.RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Register a new user</h1>
+<div asp-validation-summary="All"></div>
+<form asp-action="Register" asp-controller="Account">
+    <label asp-for="Firstname"></label> <input asp-for="Firstname"/> <br />
+    <label asp-for="Lastname"></label> <input asp-for="Lastname" /> <br />
+    <label asp-for="Username"></label> <input asp-for="Username" /> <br />
+    <label asp-for="Password"></label> <input asp-for="Password" /> <br />
+    <label asp-for="Email"></label> <input asp-for="Email" /> <br />
+    <label asp-for="RememberMe"></label> <input asp-for="RememberMe" /> <br />
+    <br />
+    <input type="submit" value="Register user"/>
+</form>
+

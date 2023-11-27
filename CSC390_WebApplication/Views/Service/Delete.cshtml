@@ -3,7 +3,7 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Are you sure you want to delete the instructor: @Model.ServiceName?</h1>
+<h1>Are you sure you want to delete the service: @Model.ServiceName?</h1>
 <div class="btn-group">
 	<form asp-action="DeleteConfirm" asp-controller="Service" asp-route-id="@Model.Id">
 		<button type="submit" class="btn btn-success">Confirm</button>

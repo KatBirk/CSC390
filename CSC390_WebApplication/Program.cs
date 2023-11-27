@@ -1,5 +1,6 @@
 using CSC390_WebApplication.Data;
 using CSC390_WebApplication.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +9,21 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews(); //add services needed for controllers
 builder.Services.AddSingleton<IMyInterface,MyServiceClass>(); //Registering a service
 builder.Services.AddDbContext<MyDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("myDB")));
+
+//Define configurations of users
+builder.Services.AddIdentity<User,IdentityRole> //custom made user class 
+    (options =>
+    {
+        options.SignIn.RequireConfirmedAccount = false;
+        options.Password.RequireDigit = true;
+        options.Password.RequireNonAlphanumeric = true;
+        options.Password.RequiredLength = 5;
+        options.Password.RequireLowercase = true;
+        options.Password.RequireUppercase = true;
+        options.User.RequireUniqueEmail = true;
+    }).AddEntityFrameworkStores<MyDbContext>();
+
+
 
 var app = builder.Build();
 
@@ -31,7 +47,9 @@ else
 }
 
 app.UseStaticFiles(); //Middleware to enable static files, usually first
+app.UseAuthentication(); //Order is important
 app.UseRouting(); //Add route matching to pipeline
+app.UseAuthorization();
 app.MapControllerRoute(
     name: "main",
     pattern: "{controller}/{action}/{id?}",

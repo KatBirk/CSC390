@@ -1,0 +1,18 @@
+﻿
+@model CSC390_WebApplication.ViewModels.LoginViewModel;
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Login</h1>
+
+<form asp-action="Login" asp-controller="Account">
+    <div asp-validation-summary="ModelOnly"></div>
+    <label asp-for="Username"></label> <input asp-for="Username"/><br />
+    <label asp-for="Password"></label> <input asp-for="Password" /><br />
+    <label asp-for="RememberMe"></label> <input asp-for="RememberMe" /><br />
+    <br />
+    <input type="submit" value="Log in" class="btn btn-success"/>
+</form>
+

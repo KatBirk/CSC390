@@ -3,7 +3,7 @@
 	ViewData["Title"] = "Delete";
 }
 
-<h1>Are you sure you want to delete the instructor: @Model.CustomerName?</h1>
+<h1>Are you sure you want to delete the booking made by: @Model.CustomerName?</h1>
 <div class="btn-group">
 	<form asp-action="DeleteConfirm" asp-controller="Booking" asp-route-id="@Model.Id">
 		<button type="submit" class="btn btn-success">Confirm</button>
