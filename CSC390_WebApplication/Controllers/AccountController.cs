@@ -18,8 +18,9 @@ namespace CSC390_WebApplication.Controllers
         }
 
         //Login
-		public IActionResult Login() //Get the form
+		public IActionResult Login(string? returnURL) //Get the form
 		{
+			TempData["returnURL"]= returnURL; //Save the url to redirect to correct page
 			if (User != null && User.Identity != null && User.Identity.IsAuthenticated == true)
 			{
 				return RedirectToAction("Index", "Booking");
@@ -39,8 +40,15 @@ namespace CSC390_WebApplication.Controllers
 				//Check success
 				if (result.Succeeded)
 				{
-					return RedirectToAction("Index", "Booking");
-				}
+					if (!string.IsNullOrEmpty(TempData["returnURL"] as String))
+					{
+						return Redirect(TempData["returnURL"] as String);
+					}
+					else
+					{
+                        return RedirectToAction("Index", "Booking");
+                    }
+                }
             }
             //If login failed
 			ModelState.AddModelError("", "Failed to login");

@@ -13,7 +13,7 @@
     <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="~/Images/Cool-Restaurant-Logo-Download.webp" alt="logo" style="width:40px;" class="rounded-pill" />
+                <a asp-controller="Home" asp-action="HomePage"><img src="~/images/autologo.jpg" alt="logo" style="width:40px;" class="rounded-pill" /></a>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -23,6 +23,9 @@
                     <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="HomePage">Home</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Booking" asp-action="Index">Bookings</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Service" asp-action="Index">Services</a></li>
+                </ul>
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav">
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Logout">Logout</a></li>
@@ -32,7 +35,9 @@
                         <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Login">Login</a></li>
                     }
                     <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Register">Register user</a></li>
-                </ul>
+                    </ul>
+                </div>
+                
             </div>
         </div>
     </nav>
@@ -49,7 +54,7 @@
     <br />
     <br />
     <div id="foot">
-        <p class="altText">&copy; All rights reserved</p>
+        <p class="altText">&copy; Katrine Birk, CSC390, fall 2023</p>
     </div>
 </body>
 </html>

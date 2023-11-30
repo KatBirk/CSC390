@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "L1qR3xRqgLfgHLrelu+5OqyOV8+QzoIQJU6Z09DJ/eg=",
+  "Hash": "6ThTFjDctjKkBP5hwY3E+Cahj5Zl1crfmvdBTqlc8EM=",
   "Source": "CSC390_WebApplication",
   "BasePath": "_content/CSC390_WebApplication",
   "Mode": "Default",
@@ -1176,12 +1176,12 @@
       "OriginalItemSpec": "wwwroot\\CSS\\mycss.css"
     },
     {
-      "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\Cool-Restaurant-Logo-Download.webp",
+      "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\autoFront.jpg",
       "SourceId": "CSC390_WebApplication",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\",
       "BasePath": "_content/CSC390_WebApplication",
-      "RelativePath": "Images/Cool-Restaurant-Logo-Download.webp",
+      "RelativePath": "Images/autoFront.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1192,7 +1192,45 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Cool-Restaurant-Logo-Download.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\autoFront.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\autoLogo.jpg",
+      "SourceId": "CSC390_WebApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\",
+      "BasePath": "_content/CSC390_WebApplication",
+      "RelativePath": "Images/autoLogo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\autoLogo.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\hsp-logo-ny-1.png",
+      "SourceId": "CSC390_WebApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\",
+      "BasePath": "_content/CSC390_WebApplication",
+      "RelativePath": "Images/hsp-logo-ny-1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\hsp-logo-ny-1.png"
     },
     {
       "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\NoooGif.gif",
@@ -1233,25 +1271,6 @@
       "OriginalItemSpec": "wwwroot\\Images\\nooooImg.jpg"
     },
     {
-      "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\restaurantImage.png",
-      "SourceId": "CSC390_WebApplication",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\",
-      "BasePath": "_content/CSC390_WebApplication",
-      "RelativePath": "Images/restaurantImage.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\restaurantImage.png"
-    },
-    {
       "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\serviceDefaultIcon.png",
       "SourceId": "CSC390_WebApplication",
       "SourceType": "Discovered",
@@ -1290,6 +1309,25 @@
       "OriginalItemSpec": "wwwroot\\Images\\standardCustomer.webp"
     },
     {
+      "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\vinterBil.jpg",
+      "SourceId": "CSC390_WebApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\",
+      "BasePath": "_content/CSC390_WebApplication",
+      "RelativePath": "Images/vinterBil.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\vinterBil.jpg"
+    },
+    {
       "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\index.html",
       "SourceId": "CSC390_WebApplication",
       "SourceType": "Discovered",
@@ -1307,6 +1345,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\JS\\MyScript.js",
+      "SourceId": "CSC390_WebApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\",
+      "BasePath": "_content/CSC390_WebApplication",
+      "RelativePath": "JS/MyScript.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\JS\\MyScript.js"
     }
   ]
 }

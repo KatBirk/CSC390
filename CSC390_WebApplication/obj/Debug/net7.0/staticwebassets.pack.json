@@ -5,20 +5,24 @@
       "PackagePath": "staticwebassets\\CSS\\mycss.css"
     },
     {
-      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\Cool-Restaurant-Logo-Download.webp",
-      "PackagePath": "staticwebassets\\Images\\Cool-Restaurant-Logo-Download.webp"
-    },
-    {
       "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\NoooGif.gif",
       "PackagePath": "staticwebassets\\Images\\NoooGif.gif"
     },
     {
-      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\nooooImg.jpg",
-      "PackagePath": "staticwebassets\\Images\\nooooImg.jpg"
+      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\autoFront.jpg",
+      "PackagePath": "staticwebassets\\Images\\autoFront.jpg"
     },
     {
-      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\restaurantImage.png",
-      "PackagePath": "staticwebassets\\Images\\restaurantImage.png"
+      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\autoLogo.jpg",
+      "PackagePath": "staticwebassets\\Images\\autoLogo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\hsp-logo-ny-1.png",
+      "PackagePath": "staticwebassets\\Images\\hsp-logo-ny-1.png"
+    },
+    {
+      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\nooooImg.jpg",
+      "PackagePath": "staticwebassets\\Images\\nooooImg.jpg"
     },
     {
       "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\serviceDefaultIcon.png",
@@ -27,6 +31,14 @@
     {
       "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\standardCustomer.webp",
       "PackagePath": "staticwebassets\\Images\\standardCustomer.webp"
+    },
+    {
+      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\vinterBil.jpg",
+      "PackagePath": "staticwebassets\\Images\\vinterBil.jpg"
+    },
+    {
+      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\JS\\MyScript.js",
+      "PackagePath": "staticwebassets\\JS\\MyScript.js"
     },
     {
       "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\index.html",

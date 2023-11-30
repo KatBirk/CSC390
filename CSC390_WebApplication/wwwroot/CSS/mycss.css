@@ -7,21 +7,28 @@ body { /*Element selector*/
     margin: 0;
     padding: 0;
     position: relative;
+    background-color: rgb(210, 210, 210, 0,20)
 }
 
 .altText { /*Class selector*/
-    color: whitesmoke;
+    color: gray;
 }
 
 #foot { /*id selector*/
-    background-color: darkblue;
+    /*background-color: darkblue;*/
     width: 100%;
     margin: 5px;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     bottom: 0;
     left: 0;
     position: fixed;
+}
+
+#centered-header {
+    text-align: center;
+    position:center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 img {
@@ -35,6 +42,10 @@ img {
     clear: both;
     display: table;
     margin-bottom: 60px;
+}
+
+.c-container {
+    display: inline-flex;
 }
 
 

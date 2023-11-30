@@ -20,7 +20,8 @@ namespace CSC390_WebApplication.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Booking>().HasData(
+            modelBuilder.Entity<Booking>()
+                .HasData(
                 new Booking() {
                     Id = 45,
                     Created = DateTime.Parse("12/12/2022"),
@@ -67,7 +68,7 @@ namespace CSC390_WebApplication.Data
                     Id = 1,
                     Price = 100,
                     ServiceName = "Oil change",
-                    ServiceType = ServiceType.CAR,
+                    ServiceType = ServiceType.QUICK,
                     ServiceDescription = "Get your oil changed",
                     CreatedDate = DateTime.Parse("02/02/2010"),
                     IsActive = true
@@ -76,9 +77,9 @@ namespace CSC390_WebApplication.Data
                 {
                     Id = 2,
                     Price = 50,
-                    ServiceName = "General car check",
-                    ServiceType = ServiceType.CAR,
-                    ServiceDescription = "Checkup for your car",
+                    ServiceName = "General car serivce checkup",
+                    ServiceType = ServiceType.GENERAL,
+                    ServiceDescription = "Schedules checkup for your car",
                     CreatedDate = DateTime.Now,
 					IsActive = true
 				},
@@ -86,9 +87,9 @@ namespace CSC390_WebApplication.Data
                 {
                     Id = 3,
                     Price = 70,
-                    ServiceName = "Regular haircut",
-                    ServiceType = ServiceType.BEAUTY,
-                    ServiceDescription = "Get a regular haircut with no coloring",
+                    ServiceName = "Crash assessment",
+                    ServiceType = ServiceType.EMERGENCYREPAIR,
+                    ServiceDescription = "Get damage to your car assessed and get a price estimate",
                     CreatedDate = DateTime.Parse("12/03/2003"),
 					IsActive = false
 				}

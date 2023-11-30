@@ -3,7 +3,7 @@
 	ViewData["Title"] = "Index";
 }
 
-<h1>Welcome to booking view!</h1>
+<h1>All bookings</h1>
 <form asp-action="Index" asp-controller="Booking" method="get">
 	<input type="text" placeholder="Name includes..." name="searchByCustomerName" value="@ViewBag.searchByCustomerName" id="searchBar"/>
 	<button type="submit">Filter results</button>

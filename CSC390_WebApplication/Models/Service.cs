@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 namespace CSC390_WebApplication.Models
 {
     public enum ServiceType {
-		[Display(Name = "Beauty")] BEAUTY,
-		[Display(Name = "Technology")] TECH,
-		[Display(Name = "Car")] CAR,
+		[Display(Name = "Quick service")] QUICK,
+		[Display(Name = "General service")] GENERAL,
+		[Display(Name = "Emergency repair")] EMERGENCYREPAIR,
 		[Display(Name = "Other")] OTHER
 	}
     public class Service

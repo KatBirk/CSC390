@@ -1,5 +1,6 @@
 ﻿using CSC390_WebApplication.Validators;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace CSC390_WebApplication.Models
 {
     public enum Status
@@ -23,7 +24,10 @@ namespace CSC390_WebApplication.Models
 
         [Required(ErrorMessage = "Please input a service")]
         [Display(Name = "Service chosen ")]
+        //[ForeignKey("Service")]
         public int? ServiceId { get; set; } //Add FK reference to Service
+
+        //public virtual Service Service { get; set; }
 
         [Required(ErrorMessage = "Please input a name")] //Validation attribute
         //[StringLength(50,MinimumLength = 2)] 

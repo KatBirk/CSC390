@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CSC390_WebApplication")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39ec245212f4f4bfb51a3681e8cad67acb49ed17")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15ea7f315a31b86f3b4e33a69686400bb8f60229")]
 [assembly: System.Reflection.AssemblyProductAttribute("CSC390_WebApplication")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CSC390_WebApplication")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
