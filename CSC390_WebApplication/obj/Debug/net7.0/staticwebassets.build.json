@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6ThTFjDctjKkBP5hwY3E+Cahj5Zl1crfmvdBTqlc8EM=",
+  "Hash": "2QFrBktsmquvddbTKgsUhesg6/jdjgGs7mlpV/6old8=",
   "Source": "CSC390_WebApplication",
   "BasePath": "_content/CSC390_WebApplication",
   "Mode": "Default",
@@ -1233,6 +1233,25 @@
       "OriginalItemSpec": "wwwroot\\Images\\hsp-logo-ny-1.png"
     },
     {
+      "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\map.jpg",
+      "SourceId": "CSC390_WebApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\",
+      "BasePath": "_content/CSC390_WebApplication",
+      "RelativePath": "Images/map.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\map.jpg"
+    },
+    {
       "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\NoooGif.gif",
       "SourceId": "CSC390_WebApplication",
       "SourceType": "Discovered",
@@ -1345,25 +1364,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
-    },
-    {
-      "Identity": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\JS\\MyScript.js",
-      "SourceId": "CSC390_WebApplication",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\",
-      "BasePath": "_content/CSC390_WebApplication",
-      "RelativePath": "JS/MyScript.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\JS\\MyScript.js"
     }
   ]
 }

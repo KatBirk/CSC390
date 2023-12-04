@@ -4,10 +4,14 @@ using System.ComponentModel.DataAnnotations;
 namespace CSC390_WebApplication.Models
 {
     public enum ServiceType {
-		[Display(Name = "Quick service")] QUICK,
-		[Display(Name = "General service")] GENERAL,
-		[Display(Name = "Emergency repair")] EMERGENCYREPAIR,
-		[Display(Name = "Other")] OTHER
+		[Display(Name = "Quick service")] 
+		QUICK,
+		[Display(Name = "General service")] 
+		GENERAL,
+		[Display(Name = "Emergency repair")] 
+		EMERGENCYREPAIR,
+		[Display(Name = "Other")] 
+		OTHER
 	}
     public class Service
     {

@@ -28,7 +28,7 @@ builder.Services.AddIdentity<User,IdentityRole> //custom made user class
 var app = builder.Build();
 
 var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<MyDbContext>();
-context.Database.EnsureDeleted(); //Should be commented out when dev is done
+//context.Database.EnsureDeleted(); //Should be commented out when dev is done
 context.Database.EnsureCreated();
 
 //app.MapGet("/", () => );

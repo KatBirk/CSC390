@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\Images\\hsp-logo-ny-1.png"
     },
     {
+      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\map.jpg",
+      "PackagePath": "staticwebassets\\Images\\map.jpg"
+    },
+    {
       "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\nooooImg.jpg",
       "PackagePath": "staticwebassets\\Images\\nooooImg.jpg"
     },
@@ -35,10 +39,6 @@
     {
       "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\Images\\vinterBil.jpg",
       "PackagePath": "staticwebassets\\Images\\vinterBil.jpg"
-    },
-    {
-      "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\JS\\MyScript.js",
-      "PackagePath": "staticwebassets\\JS\\MyScript.js"
     },
     {
       "Id": "C:\\Users\\katri\\Documents\\Uni_stuff\\CSC390_WebApplication\\CSC390_WebApplication\\wwwroot\\index.html",
