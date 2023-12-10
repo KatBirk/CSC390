@@ -4,14 +4,14 @@ namespace CSC390_WebApplication.Controllers
 {
     public class HomeController : Controller
     {
-        public ContentResult Index(int id)
-        {
-            return Content($"Hello from the Home Controller, index action. The id of the page is {id}");
-        }
-
-        public ViewResult HomePage()
+        public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult HomePage()
+        {
+            return RedirectToAction("Index");
         }
 
         public IActionResult Error() 

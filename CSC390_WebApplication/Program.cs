@@ -53,12 +53,12 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "main",
     pattern: "{controller}/{action}/{id?}",
-    defaults: new { controller="Home", action="HomePage" });
+    defaults: new { controller="Home", action="Index" });
 
 app.MapControllerRoute(
     name: "dataviewer",
-    pattern: "Show/{action}",
-    defaults: new { controller="Service",action= "Index"});
+    pattern: "Show/{id?}",
+    defaults: new { controller = "Booking", action = "ShowDetails" });
 
 
 app.Run(); //DO NOT delete 

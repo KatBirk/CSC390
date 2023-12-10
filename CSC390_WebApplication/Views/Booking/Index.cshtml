@@ -3,14 +3,15 @@
 	ViewData["Title"] = "Index";
 }
 
+
 <h1>All bookings</h1>
 <form asp-action="Index" asp-controller="Booking" method="get">
-	<input type="text" placeholder="Name includes..." name="searchByCustomerName" value="@ViewBag.searchByCustomerName" id="searchBar"/>
+	<input type="text" placeholder="Name includes..." name="searchByCustomerName" value="@ViewBag.searchByCustomerName" id="searchBar" />
 	<button type="submit">Filter results</button>
 	<button onclick="document.getElementById('searchBar').value=null">Clear filter</button>
 </form>
 <br />
-<table class="table table-bordered">
+<table class="table table-bordered" id="bTable">
 	<thead class="table-dark">
 		<tr>
 			<th>Customer photo</th>
@@ -25,7 +26,7 @@
 	</thead>
 	<tbody>
 		@foreach (Booking b in Model) //Using model adding in the top of the file
-		{				
+		{
 			<tr>
 				<td>
 					@if (ViewBag.photos.ContainsKey(b.Id))
